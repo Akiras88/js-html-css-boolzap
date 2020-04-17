@@ -57,6 +57,11 @@ body {
     width: 100%;
     border: 1px solid #ebebeb;
     position: relative;
+    transition: background .4s;
+}
+.box-chat:hover,
+.box-chat:focus {
+    background: rgba(255, 255, 255, 0.2);
 }
 
 /* header left style */
@@ -228,4 +233,9 @@ body {
     height: 38px;
     border-radius: 5px;
     border: 0;
+}
+
+/* TEMPLATE */
+.template {
+    display: none;
 }
