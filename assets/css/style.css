@@ -1,0 +1,17 @@
+/* UTILITIES */
+
+.u-img-size-me {
+    height: 45px;
+    border-radius: 50%;
+}
+.u-img-size-avatar {
+    height: 55px;
+    border-radius: 50%;
+}
+/* COLOR */
+.u-background-light_blue {
+    background: #9DE1FE;
+}
+.u-color-grey {
+    color: #9C9C9C;
+}
