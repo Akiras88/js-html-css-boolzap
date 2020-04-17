@@ -16,7 +16,7 @@ body {
     background-image: linear-gradient(
         to bottom,
         #009688 0px,
-        #009688 28vh,
+        #009688 20vh,
         #d2dbdc 15vh,
         #d2dbdc 100%
     );
@@ -27,7 +27,7 @@ body {
 .container {
     display: flex;
     width: 80%;
-    min-height: 95%;
+    height: 95%;
     min-width: 900px;
     background:#EAEAEA;
 }
@@ -41,7 +41,6 @@ body {
 .content {
     width: 65%;
     min-height: 100%;
-    background:#aaa;
     display: flex;
     flex-direction: column;
     position: relative;
@@ -203,4 +202,30 @@ body {
 .bot-chat {
     display: flex;
     justify-content: flex-start;
+}
+
+/* footer style */
+.Footer {
+    display: flex;
+    height: 50px;
+    align-items: center;
+    border-left: 1px solid #9C9C9C;;
+}
+.icon-footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70px;
+    font-size: 20px;
+    color: #9C9C9C;
+    cursor: pointer;
+}
+.input-write {
+    flex-grow: 2;
+}
+.input-write input {
+    width: 100%;
+    height: 38px;
+    border-radius: 5px;
+    border: 0;
 }
