@@ -34,15 +34,17 @@ body {
 .side {
     width: 35%;
     height: 100%;
-    background:rgb(235, 235, 235);
     display: flex;
     flex-direction: column;
     position: relative;
 }
 .content {
     width: 65%;
-    height: 100%;
+    min-height: 100%;
     background:#aaa;
+    display: flex;
+    flex-direction: column;
+    position: relative;
 }
 
 /* LEFT CONTAINER STYLE */
@@ -55,11 +57,10 @@ body {
     max-height: 100%;
     width: 100%;
     border: 1px solid #ebebeb;
-    padding: 5px 0 5px 10px;
     position: relative;
 }
 
-/* header left */
+/* header left style */
 .header-left {
     display: flex;
     height: 50px;
@@ -67,16 +68,18 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 5px 10px 5px 10px;
+    border-right: 1px solid #9C9C9C;
 }
-.icon-header-left i{
+.icon-header i{
     color: #9C9C9C;
-    padding-left: 10px;
+    padding: 10px;
     cursor: pointer;
     font-size: 20px;
 }
 .box-chat .bell-icon i {
     font-size: 28px;
     padding: 10px;
+    margin-left: 15px;
     border: 1px solid #fff;
     border-radius: 100%;
     background: #fff;
@@ -132,4 +135,72 @@ body {
 .time {
     align-self: flex-start;
     padding: 10px 10px;
+}
+.img-user {
+    padding-left: 15px;
+}
+
+/* RIGHT CONTAINER STYLE */
+
+/* header right style */
+.header-rigth {
+    display: flex;
+    align-items: center;
+    height: 50px;
+    max-height: 100%;
+    padding: 5px 0 5px 10px;
+    background: #EAEAEA;
+}
+.img-avatar-bot img {
+    margin-left: 10px;
+}
+.header-rigth .text-bot {
+    flex-grow: 2;
+    padding-left: 10px;
+}
+/* main style */
+.Main {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 2;
+    background-image: url(../../img/mine.jpg);
+}
+.user-chat {
+    display: flex;
+    justify-content: flex-end;
+}
+.chat-green,
+.chat-white {
+    display: flex;
+    align-items: center;
+    padding: 0 60px;
+    min-width: 100%;
+    height: 64px;
+}
+.chat-green {
+    justify-content: flex-end;
+}
+.chat-green .cloud,
+.chat-white .cloud {
+    position: relative;
+    border-radius: 10px;
+    padding: 18px 45px 18px 18px;
+}
+.chat-green .cloud {
+    background: #dcf8c6;
+}
+.chat-white .cloud {
+    background: #fff;
+}
+.chat-green .time,
+.chat-white .time {
+    position: absolute;
+    top: 27px;
+    left: 128px;
+    font-size: 11px;
+    color: #9C9C9C;
+}
+.bot-chat {
+    display: flex;
+    justify-content: flex-start;
 }
