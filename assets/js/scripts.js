@@ -26,8 +26,7 @@ $(document).ready(function(){
 
             // validation
             if (text !== ' ') {
-                var chatNew = $('.template .chat-green').clone();
-                chatNew.append(text);
+                var chatNew = $('.template .user-chat .cloud').clone().prepend(text);
                 main.append(chatNew);
                 // clear input
                 newInput.val('');

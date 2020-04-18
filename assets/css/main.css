@@ -188,20 +188,19 @@ body {
 .chat-green {
     justify-content: flex-end;
 }
-.chat-green .cloud,
-.chat-white .cloud {
+.cloud {
     position: relative;
     border-radius: 10px;
     padding: 18px 45px 18px 18px;
-}
-.chat-green .cloud {
     background: #dcf8c6;
 }
-.chat-white .cloud {
+.cloud-white {
+    position: relative;
+    border-radius: 10px;
+    padding: 18px 45px 18px 18px;
     background: #fff;
 }
-.chat-green .time,
-.chat-white .time {
+.time {
     position: absolute;
     top: 27px;
     left: 128px;
