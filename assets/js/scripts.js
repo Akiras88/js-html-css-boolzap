@@ -12,10 +12,6 @@ $(document).ready(function(){
     });
     
 
-
-
-
-
     // add a dynamic template 
 
     // with icon
@@ -28,6 +24,7 @@ $(document).ready(function(){
         if(e.which == 13) {
             sendMessage(newInput);
         }
+
     });
 
 
@@ -62,19 +59,17 @@ function sendMessage(input) {
         var time = hour + ':' + minutes;
         newMessage.children('.time').text(time);
 
+        // add user chat
         newMessage.addClass('.user-chat');
-
         $('.Main.active').append(newMessage);
 
         // reset input 
         input.val('');
 
+        // bot answer function
+        botAnswer()
 
     }
-
-
-
-
 
 }
 
@@ -85,4 +80,30 @@ function addZero(numero) {
     }
     
     return numero;
+}
+
+// bot answer function
+function botAnswer(){
+    setTimeout(function(){
+        console.log("risposta")
+        // clone template
+        var botMessage= $('.template-bot .chat-white').clone();
+
+        // add text message to template
+        botMessage.children('.cloud-white').text('ok');
+
+        // add time
+        var date = new Date();
+        var hour = addZero( date.getHours() );
+        var minutes = addZero( date.getMinutes()+1 );
+        var time = hour + ':' + minutes;
+        botMessage.children('.time-bot').text(time);
+
+        // add user chat
+        botMessage.addClass('.bot-chat');
+        $('.Main.active').append(botMessage);
+
+
+
+    }, 1000);
 }
