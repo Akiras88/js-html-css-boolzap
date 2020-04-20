@@ -3,6 +3,13 @@ $(document).ready(function(){
     // reference
     var newInput = $('.input-write input');
     var sendIcon = $('.icon-footer .fa-microphone');
+    var searchInput = $('#search-input');
+
+    // array of contact chat
+    var contact = [];
+    $('.name-user').each(function(){
+        contact.push($(this).text());
+    });
 
 
     // change icon to send chat
@@ -24,9 +31,27 @@ $(document).ready(function(){
         if(e.which == 13) {
             sendMessage(newInput);
         }
-
     });
 
+    /*****************
+     contact search
+     *****************/
+
+    $('.search').on('keyup', '#search-input', function(){
+
+        // contact to search
+        var string = searchInput.val().trim().toLowerCase();
+        // hide all contact to first
+        $('.box-chat').hide();
+
+        // show the contact sought 
+        for( var i = 0; i < contact.length; i++) {
+            if( contact[i].toLowerCase().includes(string)) {
+                console.log('ok');  // to bug
+            }
+            
+        }
+    });
 
 }); // <-- End doc ready
 
@@ -102,8 +127,5 @@ function botAnswer(){
         // add user chat
         botMessage.addClass('.bot-chat');
         $('.Main.active').append(botMessage);
-
-
-
     }, 1000);
 }
