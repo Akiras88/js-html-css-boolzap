@@ -1,10 +1,10 @@
-
 $(document).ready(function(){
 
     // reference
     var newInput = $('.input-write input');
     var sendIcon = $('.icon-footer .fa-microphone');
     var searchInput = $('#search-input');
+    var pushDropdown = $('.with-dropdown');
 
     // change icon to send chat
 
@@ -70,8 +70,21 @@ $(document).ready(function(){
         $('.text-bot[data-conversation="' + conversation + '"]').addClass('active');
     });
     
+    /********************
+        dropdown menu
+     ********************/
+
+    pushDropdown.on('click', function(){
+        // show/hide dropmenu
+        $('.dropdown').hide();
+        $(this).find('.dropdown').show();
+    });
     
-    
+    // remove chat
+
+    $('.Main').on('click', '.dropdown', function(){
+        $(this).parent().remove();
+    });
     
 
     
@@ -179,4 +192,3 @@ function scrollMessage() {
     }, 500);
 
 }
-
