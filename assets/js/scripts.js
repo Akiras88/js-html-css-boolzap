@@ -1,16 +1,10 @@
 
 $(document).ready(function(){
+
     // reference
     var newInput = $('.input-write input');
     var sendIcon = $('.icon-footer .fa-microphone');
     var searchInput = $('#search-input');
-
-
-
-
-
-
-
 
     // change icon to send chat
 
@@ -19,7 +13,9 @@ $(document).ready(function(){
     });
     
 
-    // add a dynamic template 
+    /***************************
+        add a dynamic template
+     **************************/  
 
     // with icon
     sendIcon.click(function() {
@@ -33,9 +29,9 @@ $(document).ready(function(){
         }
     });
 
-    /*****************
-    contact search
-     *****************/
+    /********************
+        contact search
+     ********************/
 
     searchInput.keyup(function(){
 
@@ -55,6 +51,20 @@ $(document).ready(function(){
         });
     });
 
+    /*******************************
+        hitch dynamic conversation
+     *******************************/
+
+    $('.box-chat').click(function(){
+
+        var conversation = $(this).attr('data-conversation');
+
+        // reset
+        $('.Main').removeClass('active')
+
+        // show active
+        $('.Main[data-conversation="' + conversation + '"]').addClass('active');
+    });
     
     
     
@@ -118,7 +128,7 @@ function sendMessage(input) {
 // bot answer function
 function botAnswer(){
     setTimeout(function(){
-        console.log("risposta")
+
         // clone template
         var botMessage= $('.template-bot .chat-white').clone();
 
