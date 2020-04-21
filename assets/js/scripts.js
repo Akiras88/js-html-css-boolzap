@@ -61,11 +61,13 @@ $(document).ready(function(){
 
         // reset
         $('.Main').removeClass('active');
+        $('.box-chat').removeClass('active');
         $('.u-img-size-me').removeClass('active');
         $('.text-bot').removeClass('active');
 
         // show active
         $('.Main[data-conversation="' + conversation + '"]').addClass('active');
+        $('.box-chat[data-conversation="' + conversation + '"]').addClass('active');
         $('.u-img-size-me[data-conversation="' + conversation + '"]').addClass('active');
         $('.text-bot[data-conversation="' + conversation + '"]').addClass('active');
     });
@@ -77,7 +79,7 @@ $(document).ready(function(){
     pushDropdown.on('click', function(){ // dont'work!!!
         // show/hide dropmenu
         $('.dropdown').hide();
-        $(this).find('.dropdown').show();
+        $(this).find('.dropdown li').toggle();
     });
     
     // remove chat
