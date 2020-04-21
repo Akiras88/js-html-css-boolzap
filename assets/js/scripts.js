@@ -60,10 +60,14 @@ $(document).ready(function(){
         var conversation = $(this).attr('data-conversation');
 
         // reset
-        $('.Main').removeClass('active')
+        $('.Main').removeClass('active');
+        $('.u-img-size-me').removeClass('active');
+        $('.text-bot').removeClass('active');
 
         // show active
         $('.Main[data-conversation="' + conversation + '"]').addClass('active');
+        $('.u-img-size-me[data-conversation="' + conversation + '"]').addClass('active');
+        $('.text-bot[data-conversation="' + conversation + '"]').addClass('active');
     });
     
     
