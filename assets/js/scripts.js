@@ -74,7 +74,7 @@ $(document).ready(function(){
         dropdown menu
      ********************/
 
-    pushDropdown.on('click', function(){
+    pushDropdown.on('click', function(){ // dont'work!!!
         // show/hide dropmenu
         $('.dropdown').hide();
         $(this).find('.dropdown').show();
@@ -85,16 +85,7 @@ $(document).ready(function(){
     $('.Main').on('click', '.dropdown', function(){
         $(this).parent().remove();
     });
-    
 
-    
-
-
-    
-    
-    
-    
-    
 
 }); // <-- End doc ready
 
