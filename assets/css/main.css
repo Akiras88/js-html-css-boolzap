@@ -216,16 +216,17 @@ h1, h2, h3, h4, h5, h6 {
     justify-content: flex-end;
 }
 
-.cloud {
-    border-radius: 10px;
-    padding: 18px 45px 18px 18px;
-    background: #dcf8c6;
-}
+.cloud,
 .cloud-white {
     border-radius: 10px;
     padding: 18px 45px 18px 18px;
-    min-width: 170px; /* bug */
+    min-width: 170px; 
+}
+.cloud-white {
     background: #fff;
+}
+.cloud {
+    background: #dcf8c6;
 }
 .time {
     position: absolute;

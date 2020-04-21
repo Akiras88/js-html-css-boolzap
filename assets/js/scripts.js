@@ -5,11 +5,11 @@ $(document).ready(function(){
     var sendIcon = $('.icon-footer .fa-microphone');
     var searchInput = $('#search-input');
 
-    // array of contact chat
-    var contact = [];
-    $('.name-user').each(function(){
-        contact.push($(this).text());
-    });
+
+
+
+
+
 
 
     // change icon to send chat
@@ -34,24 +34,40 @@ $(document).ready(function(){
     });
 
     /*****************
-     contact search
+    contact search
      *****************/
 
-    $('.search').on('keyup', '#search-input', function(){
+    searchInput.keyup(function(){
 
-        // contact to search
-        var string = searchInput.val().trim().toLowerCase();
-        // hide all contact to first
-        $('.box-chat').hide();
+        var search = $(this).val().toLowerCase().trim();
+        
+        $('.box-chat').each(function(){
+        
+            // name of the contact to be searched
+            var nameContact = $(this).find('.name-user h4').text().toLowerCase();
 
-        // show the contact sought 
-        for( var i = 0; i < contact.length; i++) {
-            if( contact[i].toLowerCase().includes(string)) {
-                console.log('ok');  // to bug
+            // check input
+            if ( nameContact.includes(search) ) {
+                $(this).show();
+            } else {
+                $(this).hide();
             }
-            
-        }
+        });
     });
+
+    
+    
+    
+    
+
+    
+
+
+    
+    
+    
+    
+    
 
 }); // <-- End doc ready
 
@@ -78,10 +94,7 @@ function sendMessage(input) {
         newMessage.children('.cloud').text(textUser);
 
         // add current time
-        var date = new Date();
-        var hour = addZero( date.getHours() );
-        var minutes = addZero( date.getMinutes() );
-        var time = hour + ':' + minutes;
+        var time = currentTime()
         newMessage.children('.time').text(time);
 
         // add user chat
@@ -92,20 +105,15 @@ function sendMessage(input) {
         input.val('');
 
         // bot answer function
-        botAnswer()
+        botAnswer();
+
+        // scroll to focus message
+        scrollMessage();
 
     }
 
 }
 
-// Add leading zero to numbers less than 10 whith function
-function addZero(numero) {
-    if(numero < 10) {
-        numero = '0' + numero;
-    }
-    
-    return numero;
-}
 
 // bot answer function
 function botAnswer(){
@@ -117,15 +125,44 @@ function botAnswer(){
         // add text message to template
         botMessage.children('.cloud-white').text('ok');
 
-        // add time
-        var date = new Date();
-        var hour = addZero( date.getHours() );
-        var minutes = addZero( date.getMinutes()+1 );
-        var time = hour + ':' + minutes;
+        // add current time
+        var time = currentTime()
         botMessage.children('.time-bot').text(time);
 
         // add user chat
         botMessage.addClass('.bot-chat');
         $('.Main.active').append(botMessage);
+
+        // scroll to focus message
+        scrollMessage();
     }, 1000);
 }
+
+// current time function
+function currentTime() {
+    var date = new Date();
+    var hour = addZero( date.getHours() );
+    var minutes = addZero( date.getMinutes() );
+    return hour + ':' + minutes;
+}
+
+// Add leading zero to numbers less than 10 whith 
+
+function addZero(numero) {
+    if(numero < 10) {
+        numero = '0' + numero;
+    }
+    
+    return numero;
+}
+
+// scroll message function
+function scrollMessage() {
+    var pixelScroll = $('.Main.active').height();
+
+    $('.Main').animate({
+        scrollTop: pixelScroll
+    }, 500);
+
+}
+
