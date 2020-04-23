@@ -68,6 +68,7 @@ $(document).ready(function(){
         // show active
         $('.Main[data-conversation="' + conversation + '"]').addClass('active');
         $('.box-chat[data-conversation="' + conversation + '"]').addClass('active');
+
         $('.u-img-size-me[data-conversation="' + conversation + '"]').addClass('active');
         $('.text-bot[data-conversation="' + conversation + '"]').addClass('active');
     });
@@ -79,7 +80,7 @@ $(document).ready(function(){
     pushDropdown.on('click', function(){ // dont'work!!!
         // show/hide dropmenu
         $('.dropdown').hide();
-        $(this).find('.dropdown li').toggle();
+        $(this).find('.dropdown').show();
     });
     
     // remove chat
@@ -159,6 +160,7 @@ function botAnswer(){
 }
 
 // current time function
+
 function currentTime() {
     var date = new Date();
     var hour = addZero( date.getHours() );
@@ -177,6 +179,7 @@ function addZero(numero) {
 }
 
 // scroll message function
+
 function scrollMessage() {
     var pixelScroll = $('.Main.active').height();
 

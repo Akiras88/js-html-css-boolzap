@@ -63,7 +63,6 @@ h4 {
     border: 1px solid #ebebeb;
     position: relative;
 }
-
 .box-chat {
     display: flex;
     align-items: center;
@@ -191,7 +190,7 @@ h4 {
     display: none;
 }
 .text-bot.active {
-    display: block;
+    display: block; /* jQuery */
 }
 /* main style */
 .Main {
@@ -202,6 +201,7 @@ h4 {
     overflow-y: auto;
     display: none; /* jQuery */
 }
+
 
 /* jQuery */
 .Main.active {
@@ -257,6 +257,7 @@ h4 {
     display: flex;
     justify-content: flex-start;
 }
+
 /* dropdown menu style */
 .dropdown {
     position: absolute;
@@ -309,6 +310,7 @@ h4 {
 }
 
 /* TEMPLATE */
+
 .template {
     display: none;
 }
